@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"path": "../../../h5_2sample_mac_191007/WebクリエイターEXサンプルHTML5/データ/実技用/site"
+		},
+		{
+			"path": "../../01-practice"
+		},
+		{
+			"path": "../../02-Roysha-bem"
+		},
+		{
+			"path": "../../../../Downloads/h5_2sample_mac_191007/WebクリエイターEXサンプルHTML5/データ/実技用/site"
+		},
+		{
+			"path": "../../../javascript基礎/23_javascript_basic25"
+		},
+		{
+			"path": "../../04-Newslly-sass"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../../../Downloads/実技用/site"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "05-SmartSpace-sass"
+	}
+}

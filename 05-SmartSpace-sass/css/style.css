@@ -1,0 +1,56 @@
+body {
+  color: #31353B;
+  font-size: 15px;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.7333333333;
+  letter-spacing: 0.02em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* common-------*/
+/*index/html*/
+.header__logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  line-height: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*spacess */
+.spacess {
+  padding-bottom: 120px;
+}
+.spacess__inner {
+  max-width: 1000px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.spacess__logo {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1;
+}
+.spacess__logo a {
+  transition: 0.2s;
+}
+.spacess__logo a:hover {
+  color: #FF9900;
+}
+
+:last-child {
+  margin-bottom: 0;
+}
+
+/*about.html*/
+/*# sourceMappingURL=style.css.map */

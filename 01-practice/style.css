@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+body {
+    color: #1E1E1E;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    line-height: 1.38;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.inner {
+    width: 86.5%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    margin: 40px 0 40px;
+    text-align: center;
+    font-size: 40px
+}
+
+header {
+
+    text-align: center;
+}
+
+/*--------------main------------------*/
+.about {
+    background: url(/images/bg_main.png)no-repeat center / cover;
+    padding: 240px 0 80px
+}
+
+.text {
+    width: fit-content;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.text dt {
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 36px;
+}
+
+.midasi h2::before {
+    content: "";
+    display: block;
+    width: 30px;
+    aspect-ratio: 1 / 1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    border-radius: 50%;
+    background-color: #72C9F3;
+}
+
+.midasi h2 {
+    margin-bottom: 50px;
+    font-size: 36px;
+    color: #000;
+    line-height: 1.2;
+    text-align: center;
+    bprder-bottom: 2px solid #DDDDDD
+}
+
+.midasi p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+/*--------------fotter------------------*/
+foooter {
+    padding: 100px 0;
+    background-color: #1e1e1e;
+    color: #fff;
+}
+
+foooter dt {
+    font-size: 14px;
+}

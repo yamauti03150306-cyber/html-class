@@ -1,0 +1,87 @@
+@use 'sass:math';
+
+$color-text: #31353B;
+$color-main: #FF9900;
+$color-accent: #F85A47;
+$color-bg: #DBFFFF;
+
+$font-family-base: Helvetica, Arial, sans-serif;
+
+$radius-base: 20px;
+
+@mixin inner($mw: 1000px, $w: 90%) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin flex($a: center, $j: space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+    align-items: $a;
+}
+
+body {
+    color: $color-text;
+    font-size: 15px;
+    font-family: $font-family-base;
+    line-height: math.div(26, 15);
+    letter-spacing: #{math.div(20, 1000)}em;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+/* common-------*/
+
+/*index/html*/
+
+.header__logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    line-height: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+/*spacess */
+.spacess {
+    padding-bottom: 120px;
+
+    &__inner {
+        @include inner();
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        font-size: 24px;
+        font-weight: bold;
+        line-height: math.div(24, 24);
+
+        a {
+            transition: .2s;
+
+            &:hover {
+                color: $color-main;
+            }
+
+        }
+    }
+}
+
+// 要素の中野一番最後のマージンを０にする
+:last-child {
+    margin-bottom: 0;
+}
+
+/*about.html*/
