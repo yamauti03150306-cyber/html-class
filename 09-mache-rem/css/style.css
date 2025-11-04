@@ -1,0 +1,149 @@
+body {
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-family: "Helvetica Neue", Verdana, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  line-height: 1.7142857143;
+  letter-spacing: 0.025em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2.5rem 0;
+  background-color: #2B2B2B;
+}
+.header__inner {
+  max-width: 900px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gnav__active {
+  color: #ED145B;
+}
+.gnav__list {
+  display: flex;
+  grid-auto-flow: column;
+  -moz-column-gap: 1.875rem;
+  column-gap: 1.875rem;
+}
+
+.mainvisual {
+  padding: 15rem 0 8.75rem;
+  background: url(../images/bg_mainvisual.png) no-repeat center/cover;
+}
+.mainvisual__inner {
+  max-width: 900px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mainvisual__title {
+  margin-bottom: 2.5rem;
+  font-size: 46px;
+  font-weight: bold;
+  line-height: 1.19;
+}
+
+.mainvisual__title span {
+  color: #ED145B;
+}
+
+.btn {
+  display: block;
+  width: 12.5rem;
+  margin-top: 3rem;
+  padding: 15px;
+  background-color: #ED145B;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+}
+
+.updates {
+  padding: 120px 0 120px;
+}
+.updates__inner {
+  max-width: 900px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.updates__title {
+  margin-bottom: 3rem;
+  color: #2B2B2B;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.18;
+  text-align: center;
+}
+
+.post__title {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #5A5A5A;
+  color: #2B2B2B;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.18;
+  margin-top: 24px;
+}
+.post__text {
+  color: #EDAA14;
+}
+@media (width >= 640px) {
+  .post__text {
+    color: #2B2B2B;
+  }
+}
+
+.updates__list {
+  display: grid;
+  row-gap: 60px;
+}
+@media (width >= 640px) {
+  .updates__list {
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 60px;
+         column-gap: 60px;
+  }
+}
+
+.btn__updates {
+  display: block;
+  width: 12.5rem;
+  margin-top: 3rem;
+  padding: 15px;
+  background-color: #EDAA14;
+  color: #fff;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+}
+
+.footer {
+  padding: 2.5rem 0 8.75rem;
+  background-color: #2B2B2B;
+  color: #fff;
+}
+.footer__inner {
+  max-width: 900px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/*# sourceMappingURL=style.css.map */

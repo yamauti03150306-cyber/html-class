@@ -1,0 +1,227 @@
+@use "sass:math";
+
+// =================================================================
+//  Variables
+// =================================================================
+
+// --- Spacing ---
+$space-s: 0.5rem; // 8px
+$space-m: 1rem; // 16px
+$space-l: 1.5rem; // 24px
+$space-xl: 2rem; // 32px
+$space-xxl: 2.5rem; // 40px
+$space-xxxl: 3rem; // 48px
+
+// --- Colors ---
+$color-text: #FFFFFF;
+$color-base: #2B2B2B;
+$color-main: #EDAA14;
+$color-accent: #ED145B;
+$color-bg: #000;
+
+// --- Typography ---
+$font-size-base: 16;
+$font-family-gothic: "Helvetica Neue", Verdana, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+$font-family-mincho: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+
+// --- Breakpoints ---
+$breakpoints: (
+    "tablet": 768px,
+    "desktop": 640px
+);
+
+
+// =================================================================
+//  Functions
+// =================================================================
+
+// pxをremに変換する
+// @param {number} $px-value - px値
+// @return {string} - rem値
+@function rem($px-value) {
+    @return #{math.div($px-value, $font-size-base)}rem;
+}
+
+// XDのトラッキング値をemに変換する
+// @param {number} $xd-value - XDのトラッキング値
+// @return {string} - em値
+@function ls($xd-value) {
+    @return #{math.div($xd-value, 1000)}em;
+}
+
+
+// =================================================================
+//  Mixins
+// =================================================================
+
+// メディアクエリ (モバイルファースト)
+// @param {string} $breakpoint - $breakpointsのキー
+@mixin mq($breakpoint: desktop) {
+    @media (width >=map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+// インナー幅の指定
+// @param {number} $mw - max-width
+// @param {number} $w  - width
+@mixin inner($mw: 900px, $w: percentage(math.div(560, 640))) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    color: $color-text;
+    font-size: 0.875rem;
+    font-family: $font-family-gothic;
+    line-height: math.div(24, 14);
+    letter-spacing: ls(25);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2.5rem 0;
+    background-color: $color-base;
+
+    &__inner {
+        @include inner();
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.gnav {
+    &__active {
+        color: #ED145B;
+    }
+
+    &__list {
+        display: flex;
+        grid-auto-flow: column;
+        -moz-column-gap: 1.875rem;
+        column-gap: 1.875rem;
+    }
+}
+
+
+//main-----//
+
+.mainvisual {
+    padding: 15rem 0 8.75rem;
+    background: url(../images/bg_mainvisual.png) no-repeat center / cover;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        margin-bottom: 2.5rem;
+        font-size: 46px;
+        font-weight: bold;
+        line-height: 1.19;
+    }
+}
+
+
+
+.mainvisual__title span {
+    color: #ED145B;
+}
+
+.btn {
+    display: block;
+    width: 12.5rem;
+    margin-top: 3rem;
+    padding: 15px;
+    background-color: $color-accent;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+}
+
+.updates {
+    padding: 120px 0 120px;
+
+    &__inner {
+        @include inner();
+    }
+
+    &__title {
+        margin-bottom: 3rem;
+        color: $color-base;
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 1.18;
+        text-align: center;
+    }
+}
+
+.post {
+    &__title {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #5A5A5A;
+        color: $color-base;
+        font-size: 1rem;
+        font-weight: bold;
+        line-height: 1.18;
+        margin-top: 24px;
+    }
+
+    &__text {
+        color: $color-main;
+
+        @include mq() {
+            color: $color-base;
+        }
+    }
+}
+
+.updates__list {
+    display: grid;
+    row-gap: 60px;
+
+    @include mq() {
+        grid-template-columns: 1fr 1fr;
+        column-gap: 60px;
+    }
+}
+
+.btn__updates {
+    display: block;
+    width: 12.5rem;
+    margin-top: 3rem;
+    padding: 15px;
+    background-color: $color-main;
+    color: #fff;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+}
+
+.footer {
+    &__inner {
+        @include inner();
+    }
+
+    padding: 2.5rem 0 8.75rem;
+    background-color: #2B2B2B;
+    color: #fff;
+}
+
+
+//@include mq() {} PC//
