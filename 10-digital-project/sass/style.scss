@@ -1,0 +1,167 @@
+@use "sass:math";
+
+// =================================================================
+//  Variables
+// =================================================================
+
+// --- Spacing ---
+$space-xs: 0.25rem; // 4px
+$space-s: 0.5rem; // 8px
+$space-m: 1rem; // 16px
+$space-l: 1.5rem; // 24px
+$space-xl: 2rem; // 32px
+$space-xxl: 2.5rem; // 40px
+$space-xxxl: 3rem; // 48px
+
+// --- Colors ---
+$color-text: #F2F2F2;
+$color-base: #BDBDBD;
+$color-main: #333;
+$color-accent: #FBFBFB;
+$color-bg: #2C2C2C;
+
+// --- Typography ---
+$font-size-base: 16;
+$font-family-gothic: "Roboto", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+$font-family-mincho: "Times New Roman", Times, "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+
+// --- Breakpoints ---
+$breakpoints: (
+    "tablet": 768px,
+    "desktop": 1024px
+);
+
+
+// =================================================================
+//  Functions
+// =================================================================
+
+// pxをremに変換する
+// @param {number} $px-value - px値
+// @return {string} - rem値
+@function rem($px-value) {
+    @return #{math.div($px-value, $font-size-base)}rem;
+}
+
+// XDのトラッキング値をemに変換する
+// @param {number} $xd-value - XDのトラッキング値
+// @return {string} - em値
+@function ls($xd-value) {
+    @return #{math.div($xd-value, 1000)}em;
+}
+
+
+// =================================================================
+//  Mixins
+// =================================================================
+
+// メディアクエリ (モバイルファースト)
+// @param {string} $breakpoint - $breakpointsのキー
+@mixin mq($breakpoint: desktop) {
+    @media (width >=map-get($breakpoints, $breakpoint)) {
+        @content;
+    }
+}
+
+// インナー幅の指定
+// @param {number} $mw - max-width
+// @param {number} $w  - width
+@mixin inner($mw: 1170px, $w: 90%) {
+    max-width: $mw;
+    width: $w;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin title-main() {
+    margin-bottom: rem(60);
+    color: $color-base;
+    font-size: rem(64);
+    font-weight: 300;
+    line-height: 1;
+}
+
+
+// =================================================================
+//  Common
+// =================================================================
+body {
+    color: $color-main;
+    font-size: rem(16);
+    font-family: $font-family-gothic;
+    line-height: math.div(25, 16);
+    letter-spacing: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+:focus-visible {
+    outline: revert;
+    outline-offset: 2px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    padding: rem(30) 0;
+    background-color: #fff;
+
+    &__inner {
+        @include inner();
+        display: grid;
+        grid-template-columns: 400fr 770fr;
+        align-items: center;
+    }
+}
+
+.gnav {
+    &__list {
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: start;
+        column-gap: percentage(math.div(45, 770));
+    }
+}
+
+&__item {
+    font-size: rem(12);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+&__link {
+    display: block;
+    padding: rem(4) rem(15);
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+
+    &--active,
+    &:hover {
+        border-color: $color-main;
+    }
+}
+
+
+.main {
+    padding-top: rem(100);
+}
+
+.about {
+    &inner {
+        @include inner();
+        padding: rem(30) rem(70) rem(30) rem(100);
+        background-color: $color-accent;
+    }
+}
+
+&__images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
